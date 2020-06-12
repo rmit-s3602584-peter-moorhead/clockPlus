@@ -5,8 +5,12 @@
 
 header {
     padding-bottom: 5px;
+    background-color: gray;
 }
 
+body {
+    background-color: lightgoldenrodyellow;
+}
 .showcaseDiv {
     padding-right: 10px;
     margin: 0 auto;
@@ -35,4 +39,18 @@ footer {
 			margin-left: 15px;
 		}
 	}
+}
+
+li{
+    margin-top: 10px;
+}
+
+li:first-child {
+    margin-top:0;
+}
+
+#list{
+    padding: 2px;
+    list-style-type: none;
+    list-style: none;
 }

@@ -1,5 +1,14 @@
 <h1>Clock+</h1>
 
+<div class="timeMeanings">
+    <ul id="list">
+        <li><i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>Business time</li>
+        <li><i class="fa fa-circle fa-lg" aria-hidden="true"style="color:yellow"></i>Business overtime</li>
+        <li><i class="fa fa-circle fa-lg" aria-hidden="true"style="color:red"></i>Personal time</li>
+        <li><i class="fas fa-moon"></i>Sleeping time</li>
+    </ul>
+</div>
+
 <div class="melbourne">
     <p>Melbourne: <%= @melbHour %></p>
     
@@ -26,7 +35,7 @@
     <p>Tokyo: <%= @tokyoHour %></p>
     
     <%= @tokyoComp %>h
-    
+
     <% if @tokyoTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
     <% elsif @tokyoTime == "Business Overtime" %>
