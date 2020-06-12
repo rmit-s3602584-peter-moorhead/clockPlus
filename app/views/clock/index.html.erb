@@ -11,7 +11,15 @@
 
 <div class="melbourne">
     <p>Melbourne: <%= @melbHour %></p>
-    
+
+    <div id="shMelbTwenty" style="display: none">
+        <%= @melbHour %></p></div>
+    </div>
+    <div id='shMelbTwelve' >
+        <%= @twelveMelb %>
+    </div>
+
+
     <% if @melbDay == 0 %>
         <p>Yesterday</p>
     <% elsif @melbDay == 1 %>
@@ -35,6 +43,13 @@
     <p>Tokyo: <%= @tokyoHour %></p>
     
     <%= @tokyoComp %>h
+
+    <div id="shTokyoTwenty" style="display: none">
+        <%= @tokyoHour %></p></div>
+    </div>
+    <div id='shTokyoTwelve' >
+        <%= @twelveTokyo %>
+    </div>
 
     <% if @tokyoTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
@@ -61,6 +76,15 @@
     <p>Rome: <%= @romeHour %></p>
     
     <%= @romeComp %>h
+
+
+    <div id="shRomeTwenty" style="display: none">
+        <%= @romeHour %></p></div>
+    </div>
+    <div id='shRomeTwelve' >
+        <%= @twelveRome %>
+    </div>
+
     <% if @romeTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
     <% elsif @romeTime == "Business Overtime" %>
@@ -85,6 +109,13 @@
     <p>Moscow: <%= @moscowHour %></p>
     <%= @moscowComp %>h
     
+    <div id="shMoscowTwenty" style="display: none">
+        <%= @moscowHour %></p></div>
+    </div>
+    <div id='shMoscowTwelve' >
+        <%= @twelveMoscow %>
+    </div>
+
 
     <% if @moscowTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
@@ -107,8 +138,11 @@
 
 <div class="la">
     <p>Los Angeles: 
-    <div id="dvPassport" style="display: none">
+    <div id="shLaTwenty" style="display: none">
         <%= @laHour %></p></div>
+    </div>
+    <div id='shLaTwelve' >
+        <%= @twelveLa %>
     </div>
     <%=@laComp%>h
     <% if @laTime == "Business" %>
@@ -148,25 +182,45 @@
 
 <label for="chkPassport">
     <input type="checkbox" id="chkPassport" />
-    Do you have Passport?
+    24-Hour Clock
 </label>
 <hr />
-<div id="dvPassport" style="display: none">
-    Passport Number:
-    <input type="text" id="txtPassportNumber" />
-</div>
-<div id="AddPassport">
-    Add New Password
-</div>
+
 <script>
 $(function () {
         $("#chkPassport").click(function () {
             if ($(this).is(":checked")) {
-                $("#dvPassport").show();
-                $("#AddPassport").hide();
+                $("#shMelbTwenty").show();
+                $("#shMelbTwelve").hide();
+
+                $("#shTokyoTwenty").show();
+                $("#shTokyoTwelve").hide();
+
+                $("#shRomeTwenty").show();
+                $("#shRomeTwelve").hide();
+
+                $("#shMoscowTwenty").show();
+                $("#shMoscowTwelve").hide();
+
+                $("#shLaTwenty").show();
+                $("#shLaTwelve").hide();
+
+
             } else {
-                $("#dvPassport").hide();
-                $("#AddPassport").show();
+                $("#shMelbTwenty").hide();
+                $("#shMelbTwelve").show();
+
+                $("#shTokyoTwenty").hide();
+                $("#shTokyoTwelve").show();
+
+                $("#shRomeTwenty").hide();
+                $("#shRomeTwelve").show();
+
+                $("#shMoscowTwenty").hide();
+                $("#shMoscowTwelve").show();
+
+                $("#shLaTwenty").hide();
+                $("#shLaTwelve").show();
             }
         });
     });
