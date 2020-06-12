@@ -1,11 +1,124 @@
 <h1>Clock+</h1>
-<p>Melbourne: <%= @melbHour %></p>
-<%= @melbTime%>
-<p>Tokyo: <%= @tokyoHour %>     <%=@tokyoComp%>h</p>
-<%= @tokyoTime%>
-<p>Rome: <%= @romeHour %>     <%= @romeComp%>h</p>
-<%= @romeTime%>
-<p>Moscow: <%= @moscowHour %>     <%= @moscowComp%>h</p>
-<%= @moscowTime%>
 
+<div class="melbourne">
+    <p>Melbourne: <%= @melbHour %></p>
+    
+    <% if @melbDay == 0 %>
+        <p>Yesterday</p>
+    <% elsif @melbDay == 1 %>
+        <p>Today<p>
+    <% else %>
+        <p>Tomorrow</p>
+    <% end %>
+    <% if @melbTime == "Business" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
+    <% elsif @melbTime == "Business Overtime" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:yellow"></i>
+    <% elsif @melbTime == "Person Time" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:red"></i>
+    <% else %>
+        <i class="fas fa-moon"></i>
+    <% end %>
+
+</div>
+
+<div class="tokyo">
+    <p>Tokyo: <%= @tokyoHour %></p>
+    
+    <%= @tokyoComp %>h
+    
+    <% if @tokyoTime == "Business" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
+    <% elsif @tokyoTime == "Business Overtime" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:yellow"></i>
+    <% elsif @tokyoTime == "Person Time" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:red"></i>
+    <% else %>
+        <i class="fas fa-moon"></i>
+    <% end %>
+
+    
+    <% if @tokyoDay == 0 %>
+        <p>Yesterday</p>
+    <% elsif @tokyoDay == 1 %>
+        <p>Today<p>
+    <% else %>
+        <p>Tomorrow</p>
+    <% end %>
+
+</div>
+
+<div class="rome">
+    <p>Rome: <%= @romeHour %></p>
+    
+    <%= @romeComp %>h
+    <% if @romeTime == "Business" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
+    <% elsif @romeTime == "Business Overtime" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:yellow"></i>
+    <% elsif @romeTime == "Person Time" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:red"></i>
+    <% else %>
+        <i class="fas fa-moon"></i>
+    <% end %>
+
+    
+    <% if @romeDay == 0 %>
+        <p>Yesterday</p>
+    <% elsif @romeDay == 1 %>
+        <p>Today<p>
+    <% else %>
+        <p>Tomorrow</p>
+    <% end %>
+</div>
+
+<div class="moscow">
+    <p>Moscow: <%= @moscowHour %></p>
+    <%= @moscowComp %>h
+    
+
+    <% if @moscowTime == "Business" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
+    <% elsif @moscowTime == "Business Overtime" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:yellow"></i>
+    <% elsif @moscowTime == "Person Time" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:red"></i>
+    <% else %>
+        <i class="fas fa-moon"></i>
+    <% end %>
+
+    <% if @moscowDay == 0 %>
+        <p>Yesterday</p>
+    <% elsif @moscowDay == 1 %>
+        <p>Today<p>
+    <% else %>
+        <p>Tomorrow</p>
+    <% end %>
+</div>
+
+<div class="losangeles">
+
+  
+
+    <p>Los Angeles: <%= @laHour %></p>
+    <%=@laComp%>h
+    <% if @laTime == "Business" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
+    <% elsif @laTime == "Business Overtime" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:yellow"></i>
+    <% elsif @laTime == "Person Time" %>
+        <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:red"></i>
+    <% elsif  @laTime == "Sleeping Time" %>
+        <i class="fas fa-moon"></i>
+    <% end %>
+   
+     <% if @laDay == 0 %>
+        <p>Yesterday</p>
+    <% elsif @laDay == 1 %>
+        <p>Today<p>
+    <% else %>
+        <p>Tomorrow</p>
+    <% end %>
+
+</div>
 <%= check_box("tag", tag.id)%>
