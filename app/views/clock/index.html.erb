@@ -183,15 +183,15 @@
         } 
     </style> 
 
-<label for="chkPassport">
-    <input type="checkbox" id="chkPassport" />
+<label for="timeHide">
+    <input type="checkbox" id="timeHide" />
     24-Hour Clock
 </label>
 <hr />
-
+<!-- https://www.aspsnippets.com/Articles/Check-if-a-CheckBox-is-checked-or-not-using-ID-in-JavaScript-and-jQuery.aspx -->
 <script>
 $(function () {
-        $("#chkPassport").click(function () {
+        $("#timeHide").click(function () {
             if ($(this).is(":checked")) {
                 $("#shMelbTwenty").show();
                 $("#shMelbTwelve").hide();
@@ -230,7 +230,7 @@ $(function () {
 
 </script>
 
-<!-- https://www.sitepoint.com/css-theming-custom-properties-javascript/ -->
+<!-- https://www.sitepoint.com/css-theming-custom-properties-javascript/ this script as well as the css-->
 <script>
 document.body.onload = ()=>{
   
