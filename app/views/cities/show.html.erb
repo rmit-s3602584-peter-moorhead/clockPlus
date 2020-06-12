@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @city.value %>
+</p>
+
+<p>
+  <strong>Abbr:</strong>
+  <%= @city.abbr %>
+</p>
+
+<p>
+  <strong>Offset:</strong>
+  <%= @city.offset %>
+</p>
+
+<p>
+  <strong>Isdst:</strong>
+  <%= @city.isdst %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @city.text %>
+</p>
+
+<p>
+  <strong>Utc:</strong>
+  <%= @city.utc %>
+</p>
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

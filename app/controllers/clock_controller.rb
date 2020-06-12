@@ -53,6 +53,14 @@ class ClockController < ApplicationController
     @moscowDay = dayCalc(@moscow.day, @time.day)
     @laDay = dayCalc(@la.day, @time.day)
 
+
+
+
+    @cities = City.all
+    @city = City.find(1)
+
+
+
   
   end
 

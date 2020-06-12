@@ -1,5 +1,11 @@
-<h1>Clock+</h1>
-
+<nav class="navbar"><h1>Clock+</h1></nav>
+    <div class="container">
+        <div>
+            <input type="button" value="Red" id="toggle-red" />
+            <input type="button" value="Blue" id="toggle-blue" />            
+            <input type="button" value="Green" id="toggle-green" />
+            
+        </div>
 <div class="timeMeanings">
     <ul id="list">
         <li><i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>Business time</li>
@@ -10,8 +16,7 @@
 </div>
 
 <div class="melbourne">
-    <p>Melbourne: <%= @melbHour %></p>
-
+    <p>Melbourne: 
     <div id="shMelbTwenty" style="display: none">
         <%= @melbHour %></p></div>
     </div>
@@ -40,17 +45,15 @@
 </div>
 
 <div class="tokyo">
-    <p>Tokyo: <%= @tokyoHour %></p>
-    
-    <%= @tokyoComp %>h
-
-    <div id="shTokyoTwenty" style="display: none">
+    <p>Tokyo: 
+    <div class="tokyo" id="shTokyoTwenty" style="display: none">
         <%= @tokyoHour %></p></div>
     </div>
-    <div id='shTokyoTwelve' >
+    <div class="tokyo" id='shTokyoTwelve' >
         <%= @twelveTokyo %>
     </div>
-
+    <div class="tokyo">
+    <%= @tokyoComp %>h
     <% if @tokyoTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
     <% elsif @tokyoTime == "Business Overtime" %>
@@ -69,22 +72,19 @@
     <% else %>
         <p>Tomorrow</p>
     <% end %>
-
+    </div>
 </div>
-
+<hr />
 <div class="rome">
-    <p>Rome: <%= @romeHour %></p>
-    
-    <%= @romeComp %>h
-
-
-    <div id="shRomeTwenty" style="display: none">
+    <p>Rome:     
+    <div class="rome" id="shRomeTwenty" style="display: none">
         <%= @romeHour %></p></div>
     </div>
-    <div id='shRomeTwelve' >
+    <div class="rome" id='shRomeTwelve' >
         <%= @twelveRome %>
     </div>
-
+    <div class="rome">
+     <%= @romeComp %>h
     <% if @romeTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
     <% elsif @romeTime == "Business Overtime" %>
@@ -103,20 +103,20 @@
     <% else %>
         <p>Tomorrow</p>
     <% end %>
+    </div>
 </div>
-
+<hr />
 <div class="moscow">
-    <p>Moscow: <%= @moscowHour %></p>
-    <%= @moscowComp %>h
-    
-    <div id="shMoscowTwenty" style="display: none">
+    <p>Moscow:
+    <div class="moscow" id="shMoscowTwenty" style="display: none">
         <%= @moscowHour %></p></div>
     </div>
-    <div id='shMoscowTwelve' >
+    <div class="moscow" id='shMoscowTwelve' >
         <%= @twelveMoscow %>
     </div>
-
-
+    
+    <div class="moscow">
+    <%= @moscowComp %>h
     <% if @moscowTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
     <% elsif @moscowTime == "Business Overtime" %>
@@ -134,17 +134,20 @@
     <% else %>
         <p>Tomorrow</p>
     <% end %>
+    </div>
 </div>
-
+<hr />
 <div class="la">
     <p>Los Angeles: 
-    <div id="shLaTwenty" style="display: none">
+    <div class="la" id="shLaTwenty" style="display: none">
         <%= @laHour %></p></div>
     </div>
-    <div id='shLaTwelve' >
+    <div class="la" id='shLaTwelve' >
         <%= @twelveLa %>
     </div>
+    <div class="la">
     <%=@laComp%>h
+
     <% if @laTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
     <% elsif @laTime == "Business Overtime" %>
@@ -162,9 +165,9 @@
     <% else %>
         <p>Tomorrow</p>
     <% end %>
-
+    </div>
 </div>
-
+<hr />
 <style type="text/css"> 
         .selectt { 
             color: #fff; 
@@ -224,4 +227,35 @@ $(function () {
             }
         });
     });
+
 </script>
+
+<!-- https://www.sitepoint.com/css-theming-custom-properties-javascript/ -->
+<script>
+document.body.onload = ()=>{
+  
+    const redBtn = document.querySelector('#toggle-red');
+    const blueBtn = document.querySelector('#toggle-blue');
+    const greenBtn = document.querySelector('#toggle-green');
+    
+    redBtn.addEventListener('click',(e)=>{
+   
+      console.log("red");
+      document.documentElement.style.setProperty('--main-hue', 360);
+   })
+    
+  blueBtn.addEventListener('click',(e)=>{
+      document.documentElement.style.setProperty('--main-hue', 240);
+    })
+    
+    greenBtn.addEventListener('click',(e)=>{
+      document.documentElement.style.setProperty('--main-hue', 120);
+    })  
+  }
+</script>
+
+
+    </div>
+
+<!-- database works, but didn't manage to finish -->
+<!--<%= render@cities %>-->

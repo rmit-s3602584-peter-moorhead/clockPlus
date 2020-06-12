@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Abbr</th>
+      <th>Offset</th>
+      <th>Isdst</th>
+      <th>Text</th>
+      <th>Utc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city.value %></td>
+        <td><%= city.abbr %></td>
+        <td><%= city.offset %></td>
+        <td><%= city.isdst %></td>
+        <td><%= city.text %></td>
+        <td><%= city.utc %></td>
+        <td><%= link_to 'Show', city %></td>
+        <td><%= link_to 'Edit', edit_city_path(city) %></td>
+        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New City', new_city_path %>
