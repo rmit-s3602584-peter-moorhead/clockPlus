@@ -106,8 +106,10 @@
 </div>
 
 <div class="la">
-
-    <p>Los Angeles: <%= @laHour %></p>
+    <p>Los Angeles: 
+    <div id="dvPassport" style="display: none">
+        <%= @laHour %></p></div>
+    </div>
     <%=@laComp%>h
     <% if @laTime == "Business" %>
         <i class="fa fa-circle fa-lg" aria-hidden="true"style="color:green"></i>
@@ -128,4 +130,44 @@
     <% end %>
 
 </div>
-<%= check_box("tag", tag.id)%>
+
+<style type="text/css"> 
+        .selectt { 
+            color: #fff; 
+            padding: 30px; 
+            display: none; 
+            margin-top: 30px; 
+            width: 60%; 
+            background: green 
+        } 
+          
+        label { 
+            margin-right: 20px; 
+        } 
+    </style> 
+
+<label for="chkPassport">
+    <input type="checkbox" id="chkPassport" />
+    Do you have Passport?
+</label>
+<hr />
+<div id="dvPassport" style="display: none">
+    Passport Number:
+    <input type="text" id="txtPassportNumber" />
+</div>
+<div id="AddPassport">
+    Add New Password
+</div>
+<script>
+$(function () {
+        $("#chkPassport").click(function () {
+            if ($(this).is(":checked")) {
+                $("#dvPassport").show();
+                $("#AddPassport").hide();
+            } else {
+                $("#dvPassport").hide();
+                $("#AddPassport").show();
+            }
+        });
+    });
+</script>

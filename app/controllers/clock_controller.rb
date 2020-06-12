@@ -13,6 +13,13 @@ class ClockController < ApplicationController
     moscowOffset = @moscow.utc_offset
     laOffset = @la.utc_offset
 
+
+    @twelveMelb = @time.strftime("%I:%M %p")
+    @twelveTokyo = @tokyo.strftime("%I:%M %p")
+    @twelveRome = @rome.strftime("%I:%M %p")
+    @twelveMoscow = @moscow.strftime("%I:%M %p")
+    @twelveLa = @la.strftime("%I:%M %p")
+
     melbTime = melbCal(@melbourneOffset)
 
     @tokyoComp = offsetCalc(tokyoOffset, melbTime)
@@ -48,6 +55,11 @@ class ClockController < ApplicationController
 
   
   end
+
+
+  def twelveHour
+  end
+
 
   private
 
